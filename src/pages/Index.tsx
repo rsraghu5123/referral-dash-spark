@@ -1,13 +1,56 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import Login from "@/components/Login";
+import Dashboard from "@/components/Dashboard";
+import Leaderboard from "@/components/Leaderboard";
+
+type AppState = "login" | "dashboard" | "leaderboard";
 
 const Index = () => {
+  const [currentView, setCurrentView] = useState<AppState>("login");
+  const [isSignup, setIsSignup] = useState(false);
+
+  const handleLogin = () => {
+    setCurrentView("dashboard");
+  };
+
+  const handleLogout = () => {
+    setCurrentView("login");
+    setIsSignup(false);
+  };
+
+  const handleViewLeaderboard = () => {
+    setCurrentView("leaderboard");
+  };
+
+  const handleBackToDashboard = () => {
+    setCurrentView("dashboard");
+  };
+
+  const toggleLoginMode = () => {
+    setIsSignup(!isSignup);
+  };
+
+  if (currentView === "login") {
+    return (
+      <Login 
+        onLogin={handleLogin} 
+        isSignup={isSignup}
+        onToggleMode={toggleLoginMode}
+      />
+    );
+  }
+
+  if (currentView === "leaderboard") {
+    return (
+      <Leaderboard onBackToDashboard={handleBackToDashboard} />
+    );
+  }
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <Dashboard 
+      onLogout={handleLogout} 
+      onViewLeaderboard={handleViewLeaderboard}
+    />
   );
 };
 
