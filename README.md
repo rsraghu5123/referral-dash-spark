@@ -29,7 +29,7 @@ This project is flexible, but here is a recommended stack:
 * *Backend:* Node.js with Express.js
 * *Database (Optional):* Firebase or MongoDB for the bonus feature.
 
-* ## 📸 Screenshots
+## 📸 Screenshots
 
 ### UI Preview 1  
 ![UI Screenshot 1](Screenshot1.jpg)
