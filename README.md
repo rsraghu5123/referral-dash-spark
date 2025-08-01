@@ -29,6 +29,14 @@ This project is flexible, but here is a recommended stack:
 * *Backend:* Node.js with Express.js
 * *Database (Optional):* Firebase or MongoDB for the bonus feature.
 
+* ## 📸 Screenshots
+
+### UI Preview 1  
+![UI Screenshot 1](Screenshot1.jpg)
+
+### UI Preview 2  
+![UI Screenshot 2](Screenshot2.jpg)
+
 ## ⚙ Getting Started
 
 Follow these instructions to get a copy of the project up and running on your local machine.
